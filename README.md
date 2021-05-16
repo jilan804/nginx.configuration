@@ -26,3 +26,14 @@ install the nginx with help of ansible playbook:
          name: nginx
          state: started
          
+**step4**:
+passwordless setup jenkins user:-
+--------------------------------
+ cd /etc/sudoers.d/
+ vi 90-cloud-init-users
+ ubuntu ALL=(ALL) NOPASSWD:ALL
+jenkins ALL=(ALL) NOPASSWD:ALL
+:wq!---------->save it 
+**====================================congrats your setup done with cicd pipeline ==================================**
+
+
