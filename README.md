@@ -9,3 +9,20 @@ select new item ----> select pipeline job -----------> take a sample pipeline sy
 automatically trigger to use of webhook:
 ----------------------------------------
 *)go to setting select the webhook option and add the http://52.66.195.107:8080/github-webhook same way jenkins UI select the GIThubhook trigger for GITscm polling  
+
+
+**step3**:
+install the nginx with help of ansible playbook:
+-----------------------------------------------
+---
+ - name: install the nginx
+   hosts: localhost
+   become: yes
+   tasks:
+     - name: ensure nginx is at the latest version
+       apt: name=nginx state=latest
+     - name: start nginx
+       service:
+         name: nginx
+         state: started
+         
